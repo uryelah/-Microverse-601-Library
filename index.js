@@ -1,4 +1,6 @@
 let booksSection = document.getElementById("books");
+let localLibrary = localStorage.getItem('myLibrary');
+
 
 const bookAdder = (book, index) => {
   return `<article class='book' id='book-${index}'>
@@ -16,8 +18,6 @@ const bookAdder = (book, index) => {
   </article>`;
 };
 
-let myLibrary = [];
-
 function Book(title, author, year, cover, pageNumber, read = false) {
   this.title = title;
   this.author = author;
@@ -28,11 +28,13 @@ function Book(title, author, year, cover, pageNumber, read = false) {
 }
 
 const addBookToLibrary = (book, library, Book) => {
+  let parsedLibrary = library;
   const { title, author, year, cover, pageNumber, read } = book;
   let newBook = new Book(title, author, year, cover, pageNumber, read);
-  library.push(newBook);
+  parsedLibrary.push(newBook);
+  localStorage.setItem('myLibrary', JSON.stringify(parsedLibrary))
 };
-
+/*
 addBookToLibrary(
   {
     title: "Killing Eve",
@@ -58,21 +60,27 @@ addBookToLibrary(
   myLibrary,
   Book
 );
-
+*/
 const render = library => {
-  library.reverse().forEach((book, i) => {
-    booksSection.innerHTML += bookAdder(book, i);
-  });
+  // if library exists in locastorage iteratate through each book else create it
+  if (library) {
+    let currentLibrary = JSON.parse(library)
+    currentLibrary.forEach((book, i) => {
+      booksSection.innerHTML = bookAdder(book, i) + booksSection.innerHTML;
+    });
+  } else {
+    localStorage.setItem('myLibrary', JSON.stringify([]));
+  }
 };
 
-render(myLibrary);
-console.log(myLibrary);
+render(localLibrary);
 
 const toggleForm = () => {
   document.getElementById("book-form").classList.toggle("hidden-form");
 };
 
 document.getElementById("book-form").addEventListener("submit", event => {
+  localLibrary = localStorage.getItem('myLibrary');
   let newBook = {};
 
   [...event.target].forEach(input => {
@@ -84,23 +92,40 @@ document.getElementById("book-form").addEventListener("submit", event => {
   });
 
   // Add new Book with values from form to myLibrary array
-  addBookToLibrary(newBook, myLibrary, Book);
+  addBookToLibrary(newBook, JSON.parse(localLibrary), Book);
+  // Get updated localStorage values
+  localLibrary = localStorage.getItem('myLibrary');
+  updateLibrary = JSON.parse(localLibrary);
   booksSection.innerHTML =
-    bookAdder(myLibrary[myLibrary.length - 1], myLibrary.length - 1) +
+    bookAdder(updateLibrary[updateLibrary.length - 1], updateLibrary.length - 1) +
     booksSection.innerHTML;
 
   event.preventDefault();
 });
 
 const deleteBook = index => {
-  myLibrary.splice(index, 1);
+  // get latested localStorage values
+  localLibrary = localStorage.getItem('myLibrary');
+  // parse string into array
+  let updateLibrary = JSON.parse(localLibrary);
+  // take item out of array
+  updateLibrary.splice(index, 1);
+  // parse array into string and save it again in the locastorage
+  localStorage.setItem('myLibrary', JSON.stringify(updateLibrary));
   document.getElementById(`book-${index}`).outerHTML = "";
 };
 
 const updateBook = (index, field) => {
-  myLibrary[index][field] = !myLibrary[index][field];
+  // get latested localStorage values
+  localLibrary = localStorage.getItem('myLibrary');
+  // parse string into array
+  let updateLibrary = JSON.parse(localLibrary);
+  // update value of read as oposite of current value
+  updateLibrary[index][field] = !updateLibrary[index][field];
+  // parse array into string and save it again in the locastorage
+  localStorage.setItem('myLibrary', JSON.stringify(updateLibrary));
   document.getElementById(`book-${index}`).outerHTML = bookAdder(
-    myLibrary[index],
+    updateLibrary[index],
     index
   );
 };

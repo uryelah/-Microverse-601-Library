@@ -12,3 +12,7 @@
 .book-image {
   width: 100px;
 }
+
+.hidden-form {
+  display: none;
+}

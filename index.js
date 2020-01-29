@@ -9,6 +9,7 @@ const bookAdder = (book, index) => {
     <img class='book-image' src='${book.cover}' alt="${book.title}'s cover">
   </figure>
   <p><small>Number of pages: ${book.pageNumber}</small></p>
+  <button type="button" onclick="deleteBook(${index})" >Delete</button>
   </article>`;
 };
 
@@ -63,3 +64,7 @@ document.getElementById('book-form').addEventListener('submit', event => {
   event.preventDefault()
 });
 
+const deleteBook = (index) => {
+    myLibrary.splice(index, 1)
+    document.getElementById(`book-${index}`).outerHTML = "";
+}

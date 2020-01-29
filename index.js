@@ -37,9 +37,27 @@ const render = library => {
     booksSection.innerHTML += bookAdder(book, i);
   });
 };
+
 render(myLibrary);
 console.log(myLibrary)
 
 const toggleForm = () => {
     document.getElementById("book-form").classList.toggle("hidden-form")
 }
+
+document.getElementById('book-form').addEventListener('submit', event => {
+  let newBook = {};
+
+  [...event.target].forEach(input => {
+    if (input.type === 'submit') {
+      return
+    } else {
+      newBook[input.name] = input.value
+    }
+  });
+
+  // Add new Book with values from form to myLibrary array
+  addBookToLibrary(newBook, myLibrary, Book)
+
+  event.preventDefault()
+});

@@ -9,18 +9,28 @@
   </head>
   <body>
     <h1><span>Library</span></h1>
-    <section id='books'>
-    </section>
     <section>
-        <form id="book-form" class="hidden-form">
-            Title: <input type="text" name="title">
-            Author: <input type="text" name="author">
-            Year: <input type="text" name="year">
-            Cover: <input type="text" name="cover">
-            Number of Pages: <input type="number" name="pageNumber">
-            <input type="submit" value="Add">
-        </form>
-        <button type="button" id="toggle-form" onclick="toggleForm()" >Add New Book</button>
+      <form id="book-form" class="hidden-form">
+        <div>
+          Title: <input type="text" name="title">
+        </div>
+        <div>
+          Author: <input type="text" name="author">
+        </div>
+        <div>
+          Year: <input type="text" name="year">
+        </div>
+        <div>
+          Cover: <input type="text" name="cover">
+        </div>
+        <div>
+          Number of Pages: <input type="number" name="pageNumber">
+        </div>
+          <input type="submit" value="Add">
+      </form>
+      <button type="button" id="toggle-form" onclick="toggleForm()" >Add New Book</button>
+  </section>
+    <section id='books'>
     </section>
     <script src="./index.js"></script>
   </body>

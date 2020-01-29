@@ -1,0 +1,14 @@
+.book {
+  border: 1px solid #f3f3f3;
+  border-radius: 10px;
+  width: 300px;
+  margin: 20px;
+  box-shadow: 0 0 10px 0 #f3f3f3, 1px 1px 3px 0 #e1e2e2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-image {
+  width: 100px;
+}

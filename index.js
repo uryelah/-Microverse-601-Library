@@ -1,22 +1,37 @@
-let myLibrary = []
+let booksSection = document.getElementById("books");
 
-function Book (title) {
-    this.title = title
-}
+const bookAdder = (book, index) => {
+  return `<article class='book' id='book-${index}'>
+  <h3>${book.title}</h3>
+  <p><small>${book.author} - <em>${book.year}</em></small></p>
+  <figure>
+    <img class='book-image' src='${book.cover}' alt="${book.title}'s cover">
+  </figure>
+  </article>`;
+};
 
-const addBookToLibrary = (title, library, Book) => {
-    let book = new Book(title)
-    library.push(book)
-}
+let myLibrary = [];
 
+function Book(title, author, year, cover) {
+  this.title = title;
+  this.author = author;
+  this.year = year;
+  this.cover = cover;
+};
 
-addBookToLibrary('Killing Eve', myLibrary, Book)
-addBookToLibrary('Autonomous', myLibrary, Book)
-// console.log(myLibrary);
+const addBookToLibrary = (book, library, Book) => {
+  const { title, author, year, cover } = book;
+  let newBook = new Book(title, author, year, cover);
+  library.push(newBook);
+};
 
-const render = (library) => {
-    library.forEach(book => {
-        console.log(book.title)
-    })
-} 
+addBookToLibrary({ title: "Killing Eve", author: 'Christina Chen', year: '2005', cover: 'https://http2.mlstatic.com/dvd-killing-eve-1-temporada-completa-frete-gratis-D_NQ_NP_926551-MLB28004445126_082018-F.jpg' }, myLibrary, Book);
+addBookToLibrary({ title: "Autonomous", author: 'Christina Chen', year: '2005', cover: 'https://http2.mlstatic.com/dvd-killing-eve-1-temporada-completa-frete-gratis-D_NQ_NP_926551-MLB28004445126_082018-F.jpg' }, myLibrary, Book);
+
+const render = library => {
+  library.forEach((book, i) => {
+    booksSection.innerHTML += bookAdder(book, i);
+  });
+};
 render(myLibrary);
+console.log(myLibrary)

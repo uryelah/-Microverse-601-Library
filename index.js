@@ -1,4 +1,4 @@
-let library = []
+let myLibrary = []
 
 function Book (title) {
     this.title = title
@@ -10,5 +10,13 @@ const addBookToLibrary = (title, library, Book) => {
 }
 
 
-addBookToLibrary('Killing Eve', library, Book)
-console.log(library);
+addBookToLibrary('Killing Eve', myLibrary, Book)
+addBookToLibrary('Autonomous', myLibrary, Book)
+// console.log(myLibrary);
+
+const render = (library) => {
+    library.forEach(book => {
+        console.log(book.title)
+    })
+} 
+render(myLibrary);

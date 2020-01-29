@@ -10,6 +10,9 @@ const bookAdder = (book, index) => {
   </figure>
   <p><small>Number of pages: ${book.pageNumber}</small></p>
   <button type="button" onclick="deleteBook(${index})" >Delete</button>
+  <button type="button" onclick="updateBook(${index}, 'read')" >${
+    book.read ? "Mark unread book" : "Mark book as read"
+  }</button>
   </article>`;
 };
 
@@ -22,7 +25,7 @@ function Book(title, author, year, cover, pageNumber, read = false) {
   this.cover = cover;
   this.pageNumber = pageNumber;
   this.read = read;
-};
+}
 
 const addBookToLibrary = (book, library, Book) => {
   const { title, author, year, cover, pageNumber, read } = book;
@@ -30,8 +33,31 @@ const addBookToLibrary = (book, library, Book) => {
   library.push(newBook);
 };
 
-addBookToLibrary({ title: "Killing Eve", author: 'Christina Chen', year: '2005', cover: 'https://http2.mlstatic.com/dvd-killing-eve-1-temporada-completa-frete-gratis-D_NQ_NP_926551-MLB28004445126_082018-F.jpg', pageNumber: 15, read: true }, myLibrary, Book);
-addBookToLibrary({ title: "Autonomous", author: 'Christina Chen', year: '2005', cover: 'https://http2.mlstatic.com/dvd-killing-eve-1-temporada-completa-frete-gratis-D_NQ_NP_926551-MLB28004445126_082018-F.jpg', pageNumber: 15 }, myLibrary, Book);
+addBookToLibrary(
+  {
+    title: "Killing Eve",
+    author: "Christina Chen",
+    year: "2005",
+    cover:
+      "https://http2.mlstatic.com/dvd-killing-eve-1-temporada-completa-frete-gratis-D_NQ_NP_926551-MLB28004445126_082018-F.jpg",
+    pageNumber: 15,
+    read: true
+  },
+  myLibrary,
+  Book
+);
+addBookToLibrary(
+  {
+    title: "Autonomous",
+    author: "Christina Chen",
+    year: "2005",
+    cover:
+      "https://http2.mlstatic.com/dvd-killing-eve-1-temporada-completa-frete-gratis-D_NQ_NP_926551-MLB28004445126_082018-F.jpg",
+    pageNumber: 15
+  },
+  myLibrary,
+  Book
+);
 
 const render = library => {
   library.reverse().forEach((book, i) => {
@@ -40,31 +66,41 @@ const render = library => {
 };
 
 render(myLibrary);
-console.log(myLibrary)
+console.log(myLibrary);
 
 const toggleForm = () => {
-    document.getElementById("book-form").classList.toggle("hidden-form")
-}
+  document.getElementById("book-form").classList.toggle("hidden-form");
+};
 
-document.getElementById('book-form').addEventListener('submit', event => {
+document.getElementById("book-form").addEventListener("submit", event => {
   let newBook = {};
 
   [...event.target].forEach(input => {
-    if (input.type === 'submit') {
-      return
+    if (input.type === "submit") {
+      return;
     } else {
-      newBook[input.name] = input.value
+      newBook[input.name] = input.value;
     }
   });
 
   // Add new Book with values from form to myLibrary array
-  addBookToLibrary(newBook, myLibrary, Book)
-  booksSection.innerHTML = bookAdder(myLibrary[myLibrary.length-1], myLibrary.length-1) + booksSection.innerHTML ;
+  addBookToLibrary(newBook, myLibrary, Book);
+  booksSection.innerHTML =
+    bookAdder(myLibrary[myLibrary.length - 1], myLibrary.length - 1) +
+    booksSection.innerHTML;
 
-  event.preventDefault()
+  event.preventDefault();
 });
 
-const deleteBook = (index) => {
-    myLibrary.splice(index, 1)
-    document.getElementById(`book-${index}`).outerHTML = "";
-}
+const deleteBook = index => {
+  myLibrary.splice(index, 1);
+  document.getElementById(`book-${index}`).outerHTML = "";
+};
+
+const updateBook = (index, field) => {
+  myLibrary[index][field] = !myLibrary[index][field];
+  document.getElementById(`book-${index}`).outerHTML = bookAdder(
+    myLibrary[index],
+    index
+  );
+};

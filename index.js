@@ -33,7 +33,7 @@ addBookToLibrary({ title: "Killing Eve", author: 'Christina Chen', year: '2005',
 addBookToLibrary({ title: "Autonomous", author: 'Christina Chen', year: '2005', cover: 'https://http2.mlstatic.com/dvd-killing-eve-1-temporada-completa-frete-gratis-D_NQ_NP_926551-MLB28004445126_082018-F.jpg', pageNumber: 15 }, myLibrary, Book);
 
 const render = library => {
-  library.forEach((book, i) => {
+  library.reverse().forEach((book, i) => {
     booksSection.innerHTML += bookAdder(book, i);
   });
 };
@@ -58,6 +58,8 @@ document.getElementById('book-form').addEventListener('submit', event => {
 
   // Add new Book with values from form to myLibrary array
   addBookToLibrary(newBook, myLibrary, Book)
+  booksSection.innerHTML = bookAdder(myLibrary[myLibrary.length-1], myLibrary.length-1) + booksSection.innerHTML ;
 
   event.preventDefault()
 });
+

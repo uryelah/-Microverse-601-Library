@@ -19,8 +19,8 @@ const bookAdder = (book, index) => `<article class='book' id='book-${index}'>
     <img class='book-image' src='${book.cover}' alt="${book.title}'s cover">
   </figure>
   <p><small>Number of pages: ${book.pageNumber}</small></p>
-  <button type="button" onclick="deleteBook(${index})" >Delete</button>
-  <button type="button" onclick="updateBook(${index}, 'read')" >${
+  <button type="button" onclick="deleteBook(${index})" class="btn btn-danger">Delete</button>
+  <button type="button" onclick="updateBook(${index}, 'read')" class="btn btn-inactive" >${
   book.read ? 'Mark unread book' : 'Mark book as read'
 }</button>
   </article>`;

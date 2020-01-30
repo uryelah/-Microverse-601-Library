@@ -1,11 +1,10 @@
 const booksSection = document.getElementById('books');
 const localLibrary = localStorage.getItem('myLibrary');
 
-const getStoredLibrary = () => {
-  // get latested localStorage values
-  // parse string into array
-  return JSON.parse(localStorage.getItem('myLibrary'));
-};
+// get latested localStorage values
+// parse string into array
+const getStoredLibrary = () => JSON.parse(localStorage.getItem('myLibrary'));
+
 
 const storeLibrary = (library) => {
   // parse array into string and save it again in the locastorage
@@ -26,7 +25,9 @@ const bookAdder = (book, index) => `<article class='book' id='book-${index}'>
 }</button>
   </article>`;
 
-function Book(title, author, year, cover, pageNumber, read = false) {
+const defaultCover = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQwqk6SjQi4_H4bkjypNkvtdsENLdyOSobYKj3AlYmhENt-sKeF';
+
+function Book(title, author, year, cover = defaultCover, pageNumber, read = false) {
   this.title = title;
   this.author = author;
   this.year = year;
@@ -79,7 +80,9 @@ document.getElementById('book-form').addEventListener('submit', event => {
     if (input.type === 'submit') {
       return;
     }
-    newBook[input.name] = input.value;
+    if (input.value !== '') {
+      newBook[input.name] = input.value;
+    }
   });
 
   // Add new Book with values from form to myLibrary array

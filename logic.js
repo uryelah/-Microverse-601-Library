@@ -23,5 +23,9 @@ const addBookToLibrary = (book, library, Book) => {
   const newBook = new Book(title, author, year, cover, pageNumber, read);
   parsedLibrary.push(newBook);
   storeLibrary(parsedLibrary);
+<<<<<<< HEAD
 };
 /* eslint-enable no-unused-vars */
+=======
+};
+>>>>>>> 4acaa9b2fcda27ee59a60fe43a1ad54fce0679c7

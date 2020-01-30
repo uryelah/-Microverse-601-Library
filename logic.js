@@ -26,3 +26,7 @@ const addBookToLibrary = (book, library, Book) => {
   parsedLibrary.push(newBook);
   storeLibrary(parsedLibrary);
 };
+
+export {
+  getStoredLibrary, storeLibrary, defaultCover, Book, addBookToLibrary,
+};

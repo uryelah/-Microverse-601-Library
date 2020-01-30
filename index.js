@@ -4,7 +4,7 @@ const localLibrary = localStorage.getItem('myLibrary');
 const getStoredLibrary = () => {
   // get latested localStorage values
   // parse string into array
-  JSON.parse(localStorage.getItem('myLibrary'));
+  return JSON.parse(localStorage.getItem('myLibrary'));
 };
 
 const storeLibrary = (library) => {

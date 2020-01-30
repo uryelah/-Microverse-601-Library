@@ -1,18 +1,25 @@
 {
-  "name": "javascriptProjects",
+  "name": "-Microverse-601-Library",
   "version": "1.0.0",
-  "description": "",
+  "description": "[![Contributors][contributors-shield]][contributors-url] [![Forks][forks-shield]][forks-url] [![Stargazers][stars-shield]][stars-url] [![Issues][issues-shield]][issues-url]",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uryelah/-Microverse-601-Library.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "eslint-config-airbnb": "^18.0.1"
+  "bugs": {
+    "url": "https://github.com/uryelah/-Microverse-601-Library/issues"
   },
+  "homepage": "https://github.com/uryelah/-Microverse-601-Library#readme",
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.0"
   }
 }

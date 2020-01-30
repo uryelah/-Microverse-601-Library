@@ -1,5 +1,3 @@
-import * as libraryActions from './logic';
-
 const booksSection = document.getElementById('books');
 const localLibrary = localStorage.getItem('myLibrary');
 
@@ -25,12 +23,14 @@ const render = library => {
       booksSection.innerHTML = bookAdder(book, i) + booksSection.innerHTML;
     });
   } else {
-    libraryActions.storeLibrary([]);
+    /* eslint-disable no-undef */
+    storeLibrary([]);
+    /* eslint-enable no-undef */
   }
 };
 
 render(localLibrary);
-
+/* eslint-disable no-undef, no-unused-vars */
 const toggleForm = () => {
   const bookForm = document.getElementById('book-form').classList;
 
@@ -42,9 +42,12 @@ const toggleForm = () => {
 
   bookForm.toggle('hidden-form');
 };
+/* eslint-enable no-undef, no-unused-vars */
 
 document.getElementById('book-form').addEventListener('submit', event => {
-  const library = libraryActions.getStoredLibrary();
+  /* eslint-disable no-undef */
+  const library = getStoredLibrary();
+  /* eslint-enable no-undef */
   const newBook = {};
 
   [...event.target].forEach(input => {
@@ -56,27 +59,31 @@ document.getElementById('book-form').addEventListener('submit', event => {
     }
   });
 
-  libraryActions.addBookToLibrary(newBook, library, libraryActions.Book);
-  const updateLibrary = libraryActions.getStoredLibrary();
+  /* eslint-disable no-undef */
+  addBookToLibrary(newBook, library, Book);
+  const updateLibrary = getStoredLibrary();
+  /* eslint-enable no-undef */
   booksSection.innerHTML = bookAdder(updateLibrary[updateLibrary.length - 1],
     updateLibrary.length - 1) + booksSection.innerHTML;
 
   event.preventDefault();
 });
 
+/* eslint-disable no-undef, no-unused-vars */
 const deleteBook = index => {
-  const updateLibrary = libraryActions.getStoredLibrary();
+  const updateLibrary = getStoredLibrary();
   updateLibrary.splice(index, 1);
-  libraryActions.storeLibrary(updateLibrary);
+  storeLibrary(updateLibrary);
   document.getElementById(`book-${index}`).outerHTML = '';
 };
 
 const updateBook = (index, field) => {
-  const updateLibrary = libraryActions.getStoredLibrary();
+  const updateLibrary = getStoredLibrary();
   updateLibrary[index][field] = !updateLibrary[index][field];
-  libraryActions.storeLibrary(updateLibrary);
+  storeLibrary(updateLibrary);
   document.getElementById(`book-${index}`).outerHTML = bookAdder(
     updateLibrary[index],
     index,
   );
 };
+/* eslint-enable no-undef, no-unused-vars */

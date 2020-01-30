@@ -1,12 +1,10 @@
-// The function bellow will get the library at the loca storage and parse the string into array
-const getStoredLibrary = () => JSON.parse(localStorage.getItem('myLibrary'));
+const defaultCover = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQwqk6SjQi4_H4bkjypNkvtdsENLdyOSobYKj3AlYmhENt-sKeF';
 
-// The funciton bellow will parse an array of books into string and save it in the local storage
 const storeLibrary = (library) => {
   localStorage.setItem('myLibrary', JSON.stringify(library));
 };
-
-const defaultCover = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQwqk6SjQi4_H4bkjypNkvtdsENLdyOSobYKj3AlYmhENt-sKeF';
+/* eslint-disable no-unused-vars */
+const getStoredLibrary = () => JSON.parse(localStorage.getItem('myLibrary'));
 
 function Book(title, author, year, cover = defaultCover, pageNumber, read = false) {
   this.title = title;
@@ -26,7 +24,4 @@ const addBookToLibrary = (book, library, Book) => {
   parsedLibrary.push(newBook);
   storeLibrary(parsedLibrary);
 };
-
-export {
-  getStoredLibrary, storeLibrary, defaultCover, Book, addBookToLibrary,
-};
+/* eslint-enable no-unused-vars */

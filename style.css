@@ -18,6 +18,7 @@ h1 {
   height: 80px;
   color: rgb(6, 133, 218);
   box-shadow: 0 1px 8px 0 #3d3d3d99;
+  z-index: 300;
 }
 
 h1 span:first-child {
@@ -80,6 +81,12 @@ h1 span:nth-child(2) {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 100;
+  background-color: #fff;
+}
+
+.full:nth-of-type(2) {
+  margin-bottom: 100px;
 }
 
 .form {
@@ -141,6 +148,9 @@ h1 span:nth-child(2) {
   color: rgb(6, 133, 218);
   box-sizing: border-box;
   padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
 }
 
 .footer a {

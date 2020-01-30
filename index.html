@@ -17,15 +17,15 @@
         <span id="close-form" onclick="toggleForm()"><i class="fas fa-times-circle"></i></span>
         <div>
           <label>Title</label>
-          <input type="text" name="title">
+          <input type="text" name="title" required>
         </div>
         <div>
           <label>Author</label>
-          <input type="text" name="author">
+          <input type="text" name="author" required>
         </div>
         <div>
           <label>Year</label>
-          <input type="text" name="year">
+          <input type="text" name="year" required>
         </div>
         <div>
           <label>Cover</label>
@@ -33,7 +33,7 @@
         </div>
         <div>
           <label>Number of Pages</label>
-          <input type="number" name="pageNumber">
+          <input type="number" name="pageNumber" required>
         </div>
         <input type="submit" value="Add New Book" class="btn btn-active">
       </form>
@@ -48,6 +48,7 @@
       <a href='https://github.com/thsvr'><i class="fab fa-github"></i>
         thsvr</a>
   </footer>
+  <script src="./logic.js"></script>
   <script src="./index.js"></script>
   </body>
 </html>

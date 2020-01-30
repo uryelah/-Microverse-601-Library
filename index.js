@@ -1,15 +1,6 @@
 const booksSection = document.getElementById('books');
 const localLibrary = localStorage.getItem('myLibrary');
 
-// get latested localStorage values
-// parse string into array
-const getStoredLibrary = () => JSON.parse(localStorage.getItem('myLibrary'));
-
-const storeLibrary = (library) => {
-  // parse array into string and save it again in the locastorage
-  localStorage.setItem('myLibrary', JSON.stringify(library));
-};
-
 const bookAdder = (book, index) => `<article class='book' id='book-${index}'>
   <h3>${book.title}</h3>
   <p><small> ${book.read ? 'Already read' : 'Not read yet'}</small></p>
@@ -24,29 +15,8 @@ const bookAdder = (book, index) => `<article class='book' id='book-${index}'>
 }</button>
   </article>`;
 
-const defaultCover = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQwqk6SjQi4_H4bkjypNkvtdsENLdyOSobYKj3AlYmhENt-sKeF';
-
-function Book(title, author, year, cover = defaultCover, pageNumber, read = false) {
-  this.title = title;
-  this.author = author;
-  this.year = year;
-  this.cover = cover;
-  this.pageNumber = pageNumber;
-  this.read = read;
-}
-
-const addBookToLibrary = (book, library, Book) => {
-  const parsedLibrary = library;
-  const {
-    title, author, year, cover, pageNumber, read,
-  } = book;
-  const newBook = new Book(title, author, year, cover, pageNumber, read);
-  parsedLibrary.push(newBook);
-  storeLibrary(parsedLibrary);
-};
-
 const render = library => {
-  // if library exists in locastorage iteratate through each book else create it
+  // If library exists in locastorage iteratate through each book else create it
   if (library) {
     const currentLibrary = JSON.parse(library);
     currentLibrary.forEach((book, i) => {
@@ -84,9 +54,7 @@ document.getElementById('book-form').addEventListener('submit', event => {
     }
   });
 
-  // Add new Book with values from form to myLibrary array
   addBookToLibrary(newBook, library, Book);
-  // Get updated localStorage values
   const updateLibrary = getStoredLibrary();
   booksSection.innerHTML = bookAdder(updateLibrary[updateLibrary.length - 1],
     updateLibrary.length - 1) + booksSection.innerHTML;
@@ -96,7 +64,6 @@ document.getElementById('book-form').addEventListener('submit', event => {
 
 const deleteBook = index => {
   const updateLibrary = getStoredLibrary();
-  // take item out of array
   updateLibrary.splice(index, 1);
   storeLibrary(updateLibrary);
   document.getElementById(`book-${index}`).outerHTML = '';
@@ -104,7 +71,6 @@ const deleteBook = index => {
 
 const updateBook = (index, field) => {
   const updateLibrary = getStoredLibrary();
-  // update value of read as oposite of current value
   updateLibrary[index][field] = !updateLibrary[index][field];
   storeLibrary(updateLibrary);
   document.getElementById(`book-${index}`).outerHTML = bookAdder(

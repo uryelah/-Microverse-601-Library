@@ -5,7 +5,6 @@ const localLibrary = localStorage.getItem('myLibrary');
 // parse string into array
 const getStoredLibrary = () => JSON.parse(localStorage.getItem('myLibrary'));
 
-
 const storeLibrary = (library) => {
   // parse array into string and save it again in the locastorage
   localStorage.setItem('myLibrary', JSON.stringify(library));

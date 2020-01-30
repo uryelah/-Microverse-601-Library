@@ -27,15 +27,15 @@
 * [About the Game](#about-the-game)
 * [About the Project](#about-the-project)
   * [Installation](#installation)
-  * [Instructions](#instructions)
   * [Built With](#built-with)
-  * [Testing](#testing)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+A simple vanila Javascript, HTML, and CSS3, project which allow users add books to the page and track read books. 
+The book database will be stored in the users localstorage.
 
 <!-- ABOUT THE PROJECT -->
 ## Installation
@@ -63,9 +63,9 @@ This project was built using these technologies.
 <br />
 👤 **Sarah Uryelah Silva Chamorro**
 
-- Github: [@thsvr](https://github.com/uryelah)
-- Twitter: [@vr_ths](https://twitter.com/sarah_chamorro)
-- Linkedin: [Thaís V.](https://www.linkedin.com/in/uryelah/)
+- Github: [@uryelah](https://github.com/uryelah)
+- Twitter: [@sarah_chamorro](https://twitter.com/sarah_chamorro)
+- Linkedin: [Sharah Chamorro](https://www.linkedin.com/in/uryelah/)
 - Email: [sarahchamorro@gmail.com](sarahchamorro@gmail.com)
 
 Project Link: [https://github.com/majovainilla/tic-tac-toe-game)

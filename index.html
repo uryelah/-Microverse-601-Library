@@ -9,32 +9,45 @@
     <title>Library</title>
   </head>
   <body>
-    <h1><span>Library</span></h1>
-    <section>
-      <form id="book-form" class="hidden-form">
+    <h1><span><i class="fas fa-book-reader"></i></span>
+      <span>Library</span>
+    </h1>
+    <section class="full">
+      <form id="book-form" class="hidden-form form">
         <span id="close-form" onclick="toggleForm()"><i class="fas fa-times-circle"></i></span>
         <div>
-          Title: <input type="text" name="title">
+          <label>Title</label>
+          <input type="text" name="title">
         </div>
         <div>
-          Author: <input type="text" name="author">
+          <label>Author</label>
+          <input type="text" name="author">
         </div>
         <div>
-          Year: <input type="text" name="year">
+          <label>Year</label>
+          <input type="text" name="year">
         </div>
         <div>
-          Cover: <input type="text" name="cover">
+          <label>Cover</label>
+          <input type="text" name="cover">
         </div>
         <div>
-          Number of Pages: <input type="number" name="pageNumber">
+          <label>Number of Pages</label>
+          <input type="number" name="pageNumber">
         </div>
-          <input type="submit" value="Add New Book" class="btn btn-active">
+        <input type="submit" value="Add New Book" class="btn btn-active">
       </form>
       <button type="button" id="toggle-form" class="btn btn-active" onclick="toggleForm()" >Add New Book</button>
   </section>
-    <section id='books'>
+  <section id='books' class="full">
         
-    </section>
-    <script src="./index.js"></script>
+  </section>
+  <footer class="footer">
+    2020 - by <a href='https://github.com/uryelah'><i class="fab fa-github"></i>
+      uryelah</a> &
+      <a href='https://github.com/thsvr'><i class="fab fa-github"></i>
+        thsvr</a>
+  </footer>
+  <script src="./index.js"></script>
   </body>
 </html>

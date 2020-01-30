@@ -1,7 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap');
+
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  margin-top: 100px;
+}
+
+h1 {
+  background-color: lightgray;
+  position: fixed;
+  top: 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  height: 80px;
+  color: rgb(6, 133, 218);
+  box-shadow: 0 1px 8px 0 #3d3d3d99;
+}
+
+h1 span:first-child {
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+h1 span:nth-child(2) {
+  text-decoration: underline #fff;
 }
 
 .book {
@@ -19,17 +47,13 @@ body {
   width: 100px;
 }
 
-.hidden-form {
-  display: none;
-}
-
 .btn {
   border: none;
   border-radius: 5px;
   box-sizing: border-box;
   padding: 5px 10px;
   background-color:#fff;
-  font-weight: 800;
+  font-weight: 900;
   cursor: pointer;
   color: #fff;
   margin: 5px;
@@ -49,4 +73,82 @@ body {
 
 .btn-inactive {
   background-color: #555;
+}
+
+.full {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 20px;
+  width: 50%;
+  min-width: 400px;
+  box-shadow: 0 0 10px 0 #f3f3f3, 1px 1px 3px 0 #e1e2e2;
+}
+
+.form div {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form label {
+  display: block;
+  font-weight: 900;
+  opacity: 0.75;
+  margin-bottom: 5px;
+  align-self: flex-start;
+  margin-left: 5%;
+}
+
+.form input {
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+  padding: 3px 5px;
+  width: 90%;
+}
+
+.form .btn {
+  align-self: center;
+}
+
+#close-form {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: rgb(218, 6, 6);
+}
+
+.hidden-form {
+  display: none;
+}
+
+.footer {
+  width: 100vw;
+  background-color: #000;
+  color: rgb(6, 133, 218);
+  box-sizing: border-box;
+  padding: 20px 0;
+}
+
+.footer a {
+  color: inherit;
+  margin-left: 5px;
+  color: #fff;
+}
+
+.footer a i {
+  margin-right: 2px;
 }

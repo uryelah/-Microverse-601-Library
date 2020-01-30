@@ -1,5 +1,3 @@
-import * as libraryActions from './logic';
-
 const booksSection = document.getElementById('books');
 const localLibrary = localStorage.getItem('myLibrary');
 
@@ -25,7 +23,7 @@ const render = library => {
       booksSection.innerHTML = bookAdder(book, i) + booksSection.innerHTML;
     });
   } else {
-    libraryActions.storeLibrary([]);
+    storeLibrary([]);
   }
 };
 
@@ -44,7 +42,8 @@ const toggleForm = () => {
 };
 
 document.getElementById('book-form').addEventListener('submit', event => {
-  const library = libraryActions.getStoredLibrary();
+  const library = 
+  getStoredLibrary();
   const newBook = {};
 
   [...event.target].forEach(input => {
@@ -56,8 +55,8 @@ document.getElementById('book-form').addEventListener('submit', event => {
     }
   });
 
-  libraryActions.addBookToLibrary(newBook, library, libraryActions.Book);
-  const updateLibrary = libraryActions.getStoredLibrary();
+  addBookToLibrary(newBook, library, Book);
+  const updateLibrary = getStoredLibrary();
   booksSection.innerHTML = bookAdder(updateLibrary[updateLibrary.length - 1],
     updateLibrary.length - 1) + booksSection.innerHTML;
 
@@ -65,16 +64,16 @@ document.getElementById('book-form').addEventListener('submit', event => {
 });
 
 const deleteBook = index => {
-  const updateLibrary = libraryActions.getStoredLibrary();
+  const updateLibrary = getStoredLibrary();
   updateLibrary.splice(index, 1);
-  libraryActions.storeLibrary(updateLibrary);
+  storeLibrary(updateLibrary);
   document.getElementById(`book-${index}`).outerHTML = '';
 };
 
 const updateBook = (index, field) => {
-  const updateLibrary = libraryActions.getStoredLibrary();
+  const updateLibrary = getStoredLibrary();
   updateLibrary[index][field] = !updateLibrary[index][field];
-  libraryActions.storeLibrary(updateLibrary);
+  storeLibrary(updateLibrary);
   document.getElementById(`book-${index}`).outerHTML = bookAdder(
     updateLibrary[index],
     index,

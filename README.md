@@ -16,16 +16,15 @@
   <p align="center">
     This project is part of the Microverse Javacript Section!
     <br />
-    <a href="https://github.com/majovainilla/tic-tac-toe-game/issues">Report Bug</a>
+    <a href="https://github.com/uryelah/-Microverse-601-Library/issues">Report Bug</a>
     ·
-    <a href="https://github.com/majovainilla/tic-tac-toe-game/issues">Request Feature</a>
+    <a href="https://github.com/uryelah/-Microverse-601-Library/issues">Request Feature</a>
   </p>
 </p>
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [About the Game](#about-the-game)
 * [About the Project](#about-the-project)
   * [Installation](#installation)
   * [Built With](#built-with)
@@ -57,7 +56,7 @@ This project was built using these technologies.
 - Github: [@thsvr](https://github.com/thsvr)
 - Twitter: [@vr_ths](https://twitter.com/vr_ths)
 - Linkedin: [Thaís V.](https://www.linkedin.com/in/vr-ths-zd/)
-- Email: [vr.ths.zd@gmail.com](vr.ths.zd@gmail.com)(https://www.linkedin.com/in/vr-ths-zd/)
+- Email: [vr.ths.zd@gmail.com](vr.ths.zd@gmail.com)
 
 
 <br />
@@ -69,7 +68,6 @@ This project was built using these technologies.
 - Linkedin: [Sharah Chamorro](https://www.linkedin.com/in/uryelah/)
 - Email: [sarahchamorro@gmail.com](sarahchamorro@gmail.com)
 
-Project Link: [https://github.com/majovainilla/tic-tac-toe-game)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements

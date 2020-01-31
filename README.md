@@ -6,7 +6,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/majovainilla/tic-tac-toe-game">
+  <a href="https://github.com/uryelah/-Microverse-601-Library">
     <img src="img/mLogo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -36,6 +36,10 @@
 
 A simple vanila Javascript, HTML, and CSS3, project which allow users add books to the page and track read books. 
 The book database will be stored in the users localstorage.
+<div align="center">
+  <img src="img/library.png" width="500">
+  <img src="img/library4.png" alt="Logo" width="300">
+</div>
 
 <!-- ABOUT THE PROJECT -->
 ## Installation

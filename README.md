@@ -6,36 +6,40 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/majovainilla/tic-tac-toe-game">
+  <a href="https://github.com/uryelah/-Microverse-601-Library">
     <img src="img/mLogo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Library Project</h3>
+  <h3 align="center">Library Project -
+  <a href='https://raw.githack.com/uryelah/-Microverse-601-Library/library/index.html'> Live version</a></h3>
 
   <p align="center">
     This project is part of the Microverse Javacript Section!
     <br />
-    <a href="https://github.com/majovainilla/tic-tac-toe-game/issues">Report Bug</a>
+    <a href="https://github.com/uryelah/-Microverse-601-Library/issues">Report Bug</a>
     ·
-    <a href="https://github.com/majovainilla/tic-tac-toe-game/issues">Request Feature</a>
+    <a href="https://github.com/uryelah/-Microverse-601-Library/issues">Request Feature</a>
   </p>
 </p>
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [About the Game](#about-the-game)
 * [About the Project](#about-the-project)
   * [Installation](#installation)
-  * [Instructions](#instructions)
   * [Built With](#built-with)
-  * [Testing](#testing)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+A simple vanila Javascript, HTML, and CSS3, project which allow users add books to the page and track read books. 
+The book database will be stored in the users localstorage.
+<div align="center">
+  <img src="img/library.png" width="500">
+  <img src="img/library4.png" alt="Logo" width="300">
+</div>
 
 <!-- ABOUT THE PROJECT -->
 ## Installation
@@ -56,19 +60,18 @@ This project was built using these technologies.
 - Github: [@thsvr](https://github.com/thsvr)
 - Twitter: [@vr_ths](https://twitter.com/vr_ths)
 - Linkedin: [Thaís V.](https://www.linkedin.com/in/vr-ths-zd/)
-- Email: [vr.ths.zd@gmail.com](vr.ths.zd@gmail.com)(https://www.linkedin.com/in/vr-ths-zd/)
+- Email: [vr.ths.zd@gmail.com](vr.ths.zd@gmail.com)
 
 
 <br />
 <br />
 👤 **Sarah Uryelah Silva Chamorro**
 
-- Github: [@thsvr](https://github.com/uryelah)
-- Twitter: [@vr_ths](https://twitter.com/sarah_chamorro)
-- Linkedin: [Thaís V.](https://www.linkedin.com/in/uryelah/)
+- Github: [@uryelah](https://github.com/uryelah)
+- Twitter: [@sarah_chamorro](https://twitter.com/sarah_chamorro)
+- Linkedin: [Sharah Chamorro](https://www.linkedin.com/in/uryelah/)
 - Email: [sarahchamorro@gmail.com](sarahchamorro@gmail.com)
 
-Project Link: [https://github.com/majovainilla/tic-tac-toe-game)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements

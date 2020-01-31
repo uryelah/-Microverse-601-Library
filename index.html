@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/bc4d064067.js" crossorigin="anonymous"></script>
+    <title>Library</title>
+  </head>
+  <body>
+    <h1><span><i class="fas fa-book-reader"></i></span>
+      <span>Library</span>
+    </h1>
+    <section class="full">
+      <form id="book-form" class="hidden-form form">
+        <span id="close-form" onclick="toggleForm()"><i class="fas fa-times-circle"></i></span>
+        <div>
+          <label>Title</label>
+          <input type="text" name="title" required>
+        </div>
+        <div>
+          <label>Author</label>
+          <input type="text" name="author" required>
+        </div>
+        <div>
+          <label>Year</label>
+          <input type="text" name="year" required>
+        </div>
+        <div>
+          <label>Cover</label>
+          <input type="text" name="cover">
+        </div>
+        <div>
+          <label>Number of Pages</label>
+          <input type="number" name="pageNumber" required>
+        </div>
+        <input type="submit" value="Add New Book" class="btn btn-active">
+      </form>
+      <button type="button" id="toggle-form" class="btn btn-active" onclick="toggleForm()" >Add New Book</button>
+  </section>
+  <section id='books' class="full">
+        
+  </section>
+  <footer class="footer">
+    2020 - by <a href='https://github.com/uryelah'><i class="fab fa-github"></i>
+      uryelah</a> &
+      <a href='https://github.com/thsvr'><i class="fab fa-github"></i>
+        thsvr</a>
+  </footer>
+  <script src="./logic.js"></script>
+  <script src="./index.js"></script>
+  </body>
+</html>

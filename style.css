@@ -5,10 +5,11 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   margin-top: 100px;
+  background-color: lightgray;
 }
 
 h1 {
-  background-color: lightgray;
+  background-color: #fff;
   position: fixed;
   top: 0;
   margin: 0;
@@ -22,7 +23,7 @@ h1 {
 }
 
 h1 span:first-child {
-  background-color: #fff;
+  background-color: #d3d3d3;
   border-radius: 50%;
   display: inline-block;
   width: 32px;
@@ -30,18 +31,26 @@ h1 span:first-child {
 }
 
 h1 span:nth-child(2) {
-  text-decoration: underline #fff;
+  text-decoration: underline rgb(6, 133, 218);
+}
+
+#books {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 20px;
 }
 
 .book {
   border: 1px solid #f3f3f3;
   border-radius: 10px;
-  width: 300px;
+  min-width: 300px;
   margin: 20px;
-  box-shadow: 0 0 10px 0 #f3f3f3, 1px 1px 3px 0 #e1e2e2;
+  box-shadow: 0 0 10px 0 #bebebe, 1px 1px 3px 0 #9c9c9c;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #fff;
+  flex-grow: 0;
 }
 
 .book-image {
@@ -82,7 +91,7 @@ h1 span:nth-child(2) {
   flex-direction: column;
   align-items: center;
   z-index: 100;
-  background-color: #fff;
+  background-color: lightgray;
 }
 
 .full:nth-of-type(2) {
@@ -99,7 +108,8 @@ h1 span:nth-child(2) {
   padding: 20px;
   width: 50%;
   min-width: 400px;
-  box-shadow: 0 0 10px 0 #f3f3f3, 1px 1px 3px 0 #e1e2e2;
+  box-shadow: 0 0 10px 0 #bebebe, 1px 1px 3px 0 #9c9c9c;
+  background-color: #fff;
 }
 
 .form div {

@@ -1,5 +1,6 @@
 const booksSection = document.getElementById('books');
 const localLibrary = localStorage.getItem('myLibrary');
+let book;
 
 const bookAdder = (book, index) => `<article class='book' id='book-${index}'>
   <h3>${book.title}</h3>
@@ -60,7 +61,8 @@ document.getElementById('book-form').addEventListener('submit', event => {
   });
 
   /* eslint-disable no-undef */
-  addBookToLibrary(newBook, library, Book);
+  book = new Book(newBook);
+  book.addBookToLibrary(library);
   const updateLibrary = getStoredLibrary();
   /* eslint-enable no-undef */
   booksSection.innerHTML = bookAdder(updateLibrary[updateLibrary.length - 1],

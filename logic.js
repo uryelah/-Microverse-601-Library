@@ -6,22 +6,24 @@ const storeLibrary = (library) => {
 /* eslint-disable no-unused-vars */
 const getStoredLibrary = () => JSON.parse(localStorage.getItem('myLibrary'));
 
-function Book(title, author, year, cover = defaultCover, pageNumber, read = false) {
-  this.title = title;
-  this.author = author;
-  this.year = year;
-  this.cover = cover;
-  this.pageNumber = pageNumber;
-  this.read = read;
+class Book {
+  constructor(book) {
+    const {
+      title, author, year, cover = defaultCover, pageNumber, read = false,
+    } = book;
+    this.title = title;
+    this.author = author;
+    this.year = year;
+    this.cover = cover;
+    this.pageNumber = pageNumber;
+    this.read = read;
+  }
+
+  addBookToLibrary(library) {
+    const parsedLibrary = library;
+    parsedLibrary.push(this);
+    storeLibrary(parsedLibrary);
+  }
 }
 
-const addBookToLibrary = (book, library, Book) => {
-  const parsedLibrary = library;
-  const {
-    title, author, year, cover, pageNumber, read,
-  } = book;
-  const newBook = new Book(title, author, year, cover, pageNumber, read);
-  parsedLibrary.push(newBook);
-  storeLibrary(parsedLibrary);
-};
 /* eslint-enable no-unused-vars */
